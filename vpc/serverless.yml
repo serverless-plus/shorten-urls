@@ -1,0 +1,12 @@
+org: slsplus
+app: shorten-urls
+stage: dev
+
+component: vpc
+name: shorten-urls-vpc
+
+inputs:
+  region: ${env:REGION}
+  zone: ${env:ZONE}
+  vpcName: ${name}
+  subnetName: ${name}

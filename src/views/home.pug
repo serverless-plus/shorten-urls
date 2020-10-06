@@ -2,4 +2,9 @@ extends layout
 
 block content
   h1 Shorten Urls
-  p.lead Serverless Node.js web applications.
+  p.lead Serverless Node.js web applications
+  section
+    input(type="text",name="url",id="url")
+    button(class="button",id="button") Submit
+  section(class="result-box")
+    p(id="result")

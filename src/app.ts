@@ -2,7 +2,7 @@ import path from 'path';
 import express from 'express';
 import compression from 'compression'; // compresses requests
 import bodyParser from 'body-parser';
-import * as homeController from './controllers/home';
+import { initRoutes } from './routes';
 
 // Create Express server
 const app = express();
@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
-app.get('/', homeController.index);
+// Define Routes
+initRoutes(app);
 
 export { app };

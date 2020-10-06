@@ -21,10 +21,9 @@
     "resolveJsonModule": true,
     "noUnusedLocals": true,
     "strict": true,
-    "target": "es5",
+    "target": "ES6",
     "rootDir": "src",
-    "outDir": "dist",
-    "jsx": "preserve"
+    "outDir": "dist"
   },
   "include": ["src", "typings/**/*.d.ts"]
 }

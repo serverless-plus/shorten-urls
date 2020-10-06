@@ -1,0 +1,16 @@
+.container {
+  margin: 50px auto;
+  width: 500px;
+  text-align: center;
+}
+
+.result-box {
+  border: 1px solid #ccc;
+  width: 500px;
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}

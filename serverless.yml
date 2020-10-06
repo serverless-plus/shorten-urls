@@ -1,0 +1,42 @@
+org: slsplus
+app: shorten-urls
+stage: dev
+component: express
+name: shorten-urls
+
+inputs:
+  functionName: ${name}
+  region: ${env:REGION}
+  runtime: Nodejs12.16
+  src:
+    src: ./
+    exclude:
+      - .env
+      - '.git/**'
+      - 'docs/**'
+      - '__tests__/**'
+      - 'typings/**'
+      - '.github/**'
+      - 'node_modules/**'
+  layers:
+    - name: ${output:${stage}:${app}:${name}-layer.name}
+      version: ${output:${stage}:${app}:${name}-layer.version}
+  functionConf:
+    timeout: 120
+    vpcConfig:
+      vpcId: ${output:${stage}:${app}:${app}-vpc.vpcId}
+      subnetId: ${output:${stage}:${app}:${app}-vpc.subnetId}
+    environment:
+      variables:
+        NODE_ENV: production
+        SERVERLESS: true
+        BASE_URL: ${env:BASE_URL}
+        DB_HOST: ${output:${stage}:${app}:${app}-db.private.host}
+        DB_PORT: ${output:${stage}:${app}:${app}-db.private.port}
+        DB_NAME: ${output:${stage}:${app}:${app}-db.private.dbname}
+        DB_USER: ${output:${stage}:${app}:${app}-db.private.user}
+        DB_PASSWORD: ${output:${stage}:${app}:${app}-db.private.password}
+  apigatewayConf:
+    protocols:
+      - http
+      - https
