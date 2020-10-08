@@ -5,4 +5,6 @@ app.slsInitialize = async () => {
   await sequelize.sync({ force: false });
 };
 
+app.binaryTypes = ['*/*'];
+
 module.exports = app;

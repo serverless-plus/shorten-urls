@@ -3,8 +3,16 @@ extends layout
 block content
   h1 Shorten Urls
   p.lead Serverless Node.js web applications
-  section
-    input(type="text",name="url",id="url")
+  .domain-select
+    span.item
+      input(id="url",type="radio",name="domain",value="https://url.sls.plus",checked="true")
+      label(for="url") https://url.sls.plus
+    span.item
+      input(id="u",type="radio",name="domain",value="https://u.sls.plus")
+      label(for="u") https://u.sls.plus
+  section(class="input-box")
+    input(class="input",type="text",name="url",id="url")
     button(class="button",id="button") Submit
   section(class="result-box")
-    p(id="result")
+    h3.result-title Result
+    p(id="result") No data

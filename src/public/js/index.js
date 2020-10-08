@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   button.on('click', () => {
     const url = input.val();
-    console.log(url);
+    const domain = $('input[type=radio]:checked').val();
     if (!url) {
       return;
     }
@@ -15,10 +15,10 @@ $(document).ready(function() {
       dataType: 'json',
       data: {
         longUrl: url,
+        baseUrl: domain,
       },
     })
       .done((res) => {
-        console.log(res);
         if (res.code === 0) {
           result.html(`<a href="${res.data.url}" target="_blank">${res.data.url}</a>`);
         } else {

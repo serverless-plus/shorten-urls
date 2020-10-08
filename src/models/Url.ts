@@ -9,6 +9,9 @@ export class Url extends Model {
   longUrl!: string;
 
   @Column
+  baseUrl!: string;
+
+  @Column
   shortUrl!: string;
 
   @CreatedAt

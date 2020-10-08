@@ -4,8 +4,6 @@ import { Url } from '../models/Url';
 import { isUri } from '../utils';
 import * as homeController from '../controllers/home';
 
-const baseUrl = process.env.BASE_URL as string;
-
 const initRoutes = (app: Application): void => {
   app.get('/', homeController.index);
 
@@ -26,7 +24,7 @@ const initRoutes = (app: Application): void => {
 
   // POST /api/short
   app.post('/api/short', async (req, res) => {
-    const { longUrl } = req.body;
+    const { longUrl, baseUrl } = req.body;
 
     // Check base url
     if (!isUri(baseUrl)) {
@@ -44,7 +42,7 @@ const initRoutes = (app: Application): void => {
     // Check long url
     if (isUri(longUrl)) {
       try {
-        let url = await Url.findOne({ where: { longUrl } });
+        let url = await Url.findOne({ where: { longUrl, baseUrl } });
 
         if (url) {
           res.json({
@@ -58,6 +56,7 @@ const initRoutes = (app: Application): void => {
           const shortUrl = baseUrl + '/' + code;
 
           url = await Url.create({
+            baseUrl,
             longUrl,
             shortUrl,
             code,
