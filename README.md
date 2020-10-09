@@ -2,7 +2,7 @@
 
 [Online](https://url.sls.plus)
 
-[![Build Status](https://github.com/serverless-plus/shorten-urls/workflows/Release/badge.svg?branch=master)](https://github.com/serverless-plus/shorten-urls/actions?query=workflow:Validate+branch:master)
+[![Build Status](https://github.com/serverless-plus/shorten-urls/workflows/Validate/badge.svg?branch=master)](https://github.com/serverless-plus/shorten-urls/actions?query=workflow:Validate+branch:master)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 Serverless shorten urls service using [serverless framework](https://github.com/serverless/serverless).
