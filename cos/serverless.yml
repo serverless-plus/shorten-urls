@@ -1,0 +1,14 @@
+org: slsplus
+app: shorten-urls
+stage: dev
+
+component: cos
+name: shorten-urls-cos
+
+inputs:
+  bucket: ${name}
+  region: ${env:REGION}
+  src: ../src/public/
+  protocol: https
+  acl:
+    permissions: public-read

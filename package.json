@@ -12,6 +12,7 @@
     "deploy:layer": "sls deploy --target=./layer",
     "deploy:db": "sls deploy --target=./db",
     "deploy:vpc": "sls deploy --target=./vpc",
+    "deploy:cos": "sls deploy --target=./cos",
     "docker:up": "docker-compose up",
     "test": "jest",
     "build": "rimraf ./dist && rimraf tsconfig.tsbuildinfo && npm run compile && npm run copy-static-assets",

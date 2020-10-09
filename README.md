@@ -61,7 +61,13 @@ Then you can deploy relative resources, after the first deployment, below step i
 $ npm run deploy:vpc && npm run deploy:db && npm run deploy:layer
 ```
 
-2. Deploy serverless scf:
+2. Upload static files in `public` directory to COS:
+
+```bash
+$ npm run deploy:cos
+```
+
+3. Deploy serverless scf:
 
 ```bash
 $ npm run deploy

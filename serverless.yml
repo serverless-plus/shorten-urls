@@ -30,6 +30,7 @@ inputs:
       variables:
         NODE_ENV: production
         SERVERLESS: true
+        STATIC_URL: ${output:${stage}:${app}:${app}-cos.url}
         DB_HOST: ${output:${stage}:${app}:${app}-db.private.host}
         DB_PORT: ${output:${stage}:${app}:${app}-db.private.port}
         DB_NAME: ${output:${stage}:${app}:${app}-db.private.dbname}
