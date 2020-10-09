@@ -101,3 +101,14 @@ footer {
   bottom: 10px;
   text-align: center;
 }
+
+@media screen and (max-width: 720px) {
+  .container {
+    width: 95%;
+  }
+  .domain-select,
+  .input-box,
+  .result-box {
+    width: 100%;
+  }
+}

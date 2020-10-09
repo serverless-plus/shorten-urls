@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "ts-node src/server.ts",
-    "deploy": "sls deploy",
+    "deploy": "npm run build && sls deploy",
     "deploy:layer": "sls deploy --target=./layer",
     "deploy:db": "sls deploy --target=./db",
     "deploy:vpc": "sls deploy --target=./vpc",
