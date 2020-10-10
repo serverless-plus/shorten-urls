@@ -39,6 +39,12 @@ Start local docker postgresql:
 $ npm run docker:up
 ```
 
+Then copy `.env.example` to `.env`:
+
+```bash
+$ cp .env.example .env
+```
+
 Run server:
 
 ```bash
