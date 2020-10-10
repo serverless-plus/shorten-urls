@@ -37,6 +37,26 @@ inputs:
         DB_USER: ${output:${stage}:${app}:${app}-db.private.user}
         DB_PASSWORD: ${output:${stage}:${app}:${app}-db.private.password}
   apigatewayConf:
+    serviceTimeout: 120
     protocols:
       - http
       - https
+    # if you want to config custom domains for Tencent Cloud API Gateway, just config as below.
+    # Because I using my own generic domain ssl, so configured with Nginx server.
+    # customDomains:
+    #   - domain: url.sls.plus
+    #     certificateId: iuenkIk
+    #     isDefaultMapping: false
+    #     pathMappingSet:
+    #       - path: /
+    #         environment: release
+    #     protocols:
+    #       - https
+    #   - domain: u.sls.plus
+    #     certificateId: Dlkdjkl
+    #     isDefaultMapping: false
+    #     pathMappingSet:
+    #       - path: /
+    #         environment: release
+    #     protocols:
+    #       - https
