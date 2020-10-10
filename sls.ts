@@ -1,5 +1,5 @@
-const { app } = require('./dist/app');
-const { sequelize } = require('./dist/sequelize');
+import { app } from './src/app';
+import { sequelize } from './src/sequelize';
 
 app.slsInitialize = async () => {
   await sequelize.sync({ force: false });

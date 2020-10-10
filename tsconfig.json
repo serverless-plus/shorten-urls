@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "composite": true,
     "declaration": true,
-    "declarationMap": true,
+    "declarationMap": false,
     "downlevelIteration": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
@@ -14,7 +14,7 @@
     "lib": ["esnext", "dom"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "sourceMap": true,
+    "sourceMap": false,
     "paths": {
       "*": ["typings/*"]
     },
@@ -22,8 +22,8 @@
     "noUnusedLocals": true,
     "strict": true,
     "target": "esnext",
-    "rootDir": "src",
+    "rootDir": ".",
     "outDir": "dist"
   },
-  "include": ["src", "typings/**/*.d.ts"]
+  "include": ["src", "typings/**/*.d.ts", "sls.ts"]
 }

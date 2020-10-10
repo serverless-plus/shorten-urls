@@ -1,11 +1,16 @@
 import path from 'path';
-import express from 'express';
+import express, { Application } from 'express';
 import compression from 'compression'; // compresses requests
 import bodyParser from 'body-parser';
 import { initRoutes } from './routes';
 
+interface SlsApplication extends Application {
+  binaryTypes?: string[] | null;
+  slsInitialize?: () => Promise<void>;
+}
+
 // Create Express server
-const app = express();
+const app = express() as SlsApplication;
 
 // Express configuration
 app.set('port', process.env.PORT || 3000);

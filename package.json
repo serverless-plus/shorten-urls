@@ -16,7 +16,7 @@
     "deploy:cos": "sls deploy --target=./cos",
     "docker:up": "docker-compose up",
     "test": "jest",
-    "build": "rimraf ./dist && rimraf tsconfig.tsbuildinfo && npm run compile && npm run copy-static-assets",
+    "build": "rimraf ./dist && npm run compile && npm run copy-static-assets",
     "compile": "tsc",
     "copy-static-assets": "ts-node copyStaticAssets.ts",
     "format": "npm run lint && npm run prettier",

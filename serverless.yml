@@ -9,7 +9,7 @@ inputs:
   region: ${env:REGION}
   runtime: Nodejs12.16
   src:
-    src: ./
+    src: ./dist
     exclude:
       - .env
       - '.git/**'
