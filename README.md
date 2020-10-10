@@ -55,19 +55,47 @@ $ npm run build
 
 Then you can deploy relative resources, after the first deployment, below step is optional for next time.
 
-1. Deploy vpc,db and layer firstly:
+### Deploy database
+
+Serverless PostgreSQL need `VPC`, so we need create a `VPC` for it:
 
 ```bash
-$ npm run deploy:vpc && npm run deploy:db && npm run deploy:layer
+$ npm run deploy:vpc
 ```
 
-2. Upload static files in `public` directory to COS:
+Then we can deploy database:
+
+```bash
+$ npm run deploy:db
+```
+
+### Deploy layer
+
+For nodejs project, we can deploy `node_modules` directory to layer, so after first deployment, we do not need to deploy `node_modules` directory again, this is very useful to make our source code deployment quickly.
+
+To make layer code smaller, we can run:
+
+```bash
+$ rm -rf node_modules && npm install --production
+```
+
+so we just deploy npm modules of production to layer,
+
+```bash
+$ npm run deploy:layer
+```
+
+> **Notice**: after layer deployment, if you do not change npm modules for production, you don't need to deploy layer.
+
+### Deploy static files
+
+Upload static files in `public` directory to COS:
 
 ```bash
 $ npm run deploy:cos
 ```
 
-3. Deploy serverless scf:
+### Deploy server code
 
 ```bash
 $ npm run deploy

@@ -4,6 +4,10 @@ block content
   h1 Shorten Urls
   p.lead Serverless Node.js web applications
   .domain-select
+    if isDev
+      span.item
+        input(id="val0",type="radio",name="domain",value="http://localhost:3000",checked="true")
+        label(for="val0") http://localhost:3000
     span.item
       input(id="val1",type="radio",name="domain",value="https://url.sls.plus",checked="true")
       label(for="val1") https://url.sls.plus
