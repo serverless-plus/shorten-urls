@@ -9,6 +9,11 @@ const sequelize = new Sequelize({
   database: process.env.DB_NAME as string,
   username: process.env.DB_USER as string,
   password: process.env.DB_PASSWORD as string,
+  pool: {
+    max: 200,
+    maxUses: 1,
+    idle: 10000,
+  },
 });
 
 initUrl(sequelize);

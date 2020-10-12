@@ -2,7 +2,11 @@ import { app } from './src/app';
 import { sequelize } from './src/sequelize';
 
 app.slsInitialize = async () => {
-  await sequelize.sync({ force: false });
+  try {
+    await sequelize.sync({ force: false });
+  } catch (e) {
+    console.log(`[DB Error]: ${e}`);
+  }
 };
 
 app.binaryTypes = ['*/*'];

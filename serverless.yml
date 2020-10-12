@@ -37,10 +37,13 @@ inputs:
         DB_USER: ${output:${stage}:${app}:${app}-db.private.user}
         DB_PASSWORD: ${output:${stage}:${app}:${app}-db.private.password}
   apigatewayConf:
+    serviceName: shorten_urls
     serviceTimeout: 120
     protocols:
       - http
       - https
+    function:
+      functionQualifier: $DEFAULT
     # if you want to config custom domains for Tencent Cloud API Gateway, just config as below.
     # Because I using my own generic domain ssl, so configured with Nginx server.
     # customDomains:
