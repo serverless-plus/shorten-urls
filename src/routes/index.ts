@@ -1,5 +1,5 @@
 import { Request, Response, Application } from 'express';
-import shortid from 'shortid';
+import { nanoid } from 'nanoid';
 import { Url } from '../models/Url';
 import { isUri } from '../utils';
 import * as homeController from '../controllers/home';
@@ -37,7 +37,7 @@ const initRoutes = (app: Application): void => {
     }
 
     // Create url code
-    const code = shortid.generate();
+    const code = nanoid(9);
 
     // Check long url
     if (isUri(longUrl)) {
