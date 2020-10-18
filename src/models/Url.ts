@@ -38,7 +38,7 @@ const initUrl = (sequelize: Sequelize): void => {
         type: new DataTypes.STRING(32),
       },
       longUrl: {
-        type: new DataTypes.STRING(512),
+        type: new DataTypes.STRING(1024),
       },
       baseUrl: {
         type: new DataTypes.STRING(64),
